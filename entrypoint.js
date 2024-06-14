@@ -68,8 +68,8 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
 (async () => {
   console.log('Sending message ...');
   let finalUrl;
-  if (!threadId) {
-      finalUrl = `${url}?wait=true&thread_id${threadId}`
+  if (threadId) {
+      finalUrl = `${url}?wait=true&thread_id=${threadId}`
   } else {
     finalUrl = `${url}?wait=true`;
   }
