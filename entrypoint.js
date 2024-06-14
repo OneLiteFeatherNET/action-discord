@@ -30,6 +30,10 @@ _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
 let url;
 let payload;
+let threadId;
+if (process.env.DISOCRD_THREAD_ID) {
+  threadId = process.env.DISOCRD_THREAD_ID;
+}
 
 if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   // If argument and embeds NOT provided, let Discord show the event informations.
@@ -63,8 +67,14 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
 
 (async () => {
   console.log('Sending message ...');
+  let finalUrl;
+  if (!threadId) {
+      finalUrl = `${url}?wait=true&thread_id${threadId}`
+  } else {
+    finalUrl = `${url}?wait=true`;
+  }
   await axios.post(
-    `${url}?wait=true`,
+    finalUrl,
     payload,
     {
       headers: {
