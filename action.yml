@@ -1,5 +1,5 @@
-name: 'Actions for Discord'
-description: 'Outputs a message to Discord.'
+name: 'Webhook Action for Discord'
+description: 'Use a Discord Webhook to pint a message to Discord.'
 author: OneLiteFeatherNet
 branding:
   icon: message-square
