@@ -31,8 +31,8 @@ _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 let url;
 let payload;
 let threadId;
-if (process.env.DISOCRD_THREAD_ID) {
-  threadId = process.env.DISOCRD_THREAD_ID;
+if (process.env.DISCORD_THREAD_ID) {
+   threadId = process.env.DISCORD_THREAD_ID;
 }
 
 if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
@@ -69,7 +69,7 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   console.log('Sending message ...');
   let finalUrl;
   if (threadId) {
-      finalUrl = `${url}?wait=true&thread_id=${threadId}`
+    finalUrl = `${url}?wait=true&thread_id=${threadId}`
   } else {
     finalUrl = `${url}?wait=true`;
   }
