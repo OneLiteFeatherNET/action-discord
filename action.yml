@@ -1,6 +1,6 @@
 name: 'Actions for Discord'
 description: 'Outputs a message to Discord.'
-author: Ilshidur
+author: OneLiteFeatherNet
 branding:
   icon: message-square
   color: gray-dark
